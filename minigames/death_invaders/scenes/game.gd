@@ -7,6 +7,8 @@ func _input(event):
 				get_node("player").shoot()
 
 # TODO : Generate deads
+func generate_deads():
+	pass
 
 func _ready():
 	set_process_input(true)
