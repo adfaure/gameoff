@@ -5,14 +5,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.1567, 32.253 )
+extents = Vector2( 8.00418, 15.885 )
 
 [node name="dead" type="KinematicBody2D"]
 
 transform/pos = Vector2( 1, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 0.953584, 0, 0, 1.01092, -2.01369, -0.580432 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -20,12 +20,13 @@ collision/margin = 0.08
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -17, 0 )
-transform/scale = Vector2( 2, 2 )
+transform/pos = Vector2( -10.5311, -0.631117 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+transform/pos = Vector2( -2.01369, -0.580432 )
+transform/scale = Vector2( 0.953584, 1.01092 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
