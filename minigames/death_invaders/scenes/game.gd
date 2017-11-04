@@ -6,6 +6,7 @@ func _input(event):
 			if !has_node("bullet") :
 				get_node("player").shoot()
 
+# TODO : Generate deads
 
 func _ready():
 	set_process_input(true)
@@ -28,8 +29,16 @@ func _fixed_process(delta):
 			player.set_pos(Vector2(player.get_pos().x, self.get_viewport_rect().size.height - player.get_item_rect().size.height/2)) 
 	
 	
+	
 	# Move the deads
-	get_tree().call_group(0, "deads", "move", Vector2(100 * -delta, 0))
+	var deads = get_tree().get_nodes_in_group("deads")
+	for dead in deads :
+		var pos = dead.get_pos()
+		pos.x -= 50 * delta
+		if pos.x + dead.get_item_rect().size.width/2 < 0 :
+			dead.queue_free()
+		else :
+			dead.set_pos(pos)
 	
 	
 	# if player has shoot then move the bullet and check collisions
@@ -44,7 +53,8 @@ func _fixed_process(delta):
 			if bullet.is_colliding() : # if collides a dead, rekill the dead
 				bullet.get_collider().queue_free()
 			bullet.queue_free()
-			
+	
+	
 	
 	
 	

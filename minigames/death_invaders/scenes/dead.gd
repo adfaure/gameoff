@@ -5,4 +5,4 @@ extends KinematicBody2D
 # var b = "textvar"
 
 func _ready():
-	add_to_group("deads")
+	self.add_to_group("deads")
