@@ -28,6 +28,9 @@ func _fixed_process(delta):
 			player.set_pos(Vector2(player.get_pos().x, self.get_viewport_rect().size.height - player.get_item_rect().size.height/2)) 
 	
 	
+	# Move the deads
+	get_tree().call_group(0, "deads", "move", Vector2(100 * -delta, 0))
+	
 	
 	# if player has shoot then move the bullet and check collisions
 	if has_node("bullet") :
@@ -42,5 +45,6 @@ func _fixed_process(delta):
 				bullet.get_collider().queue_free()
 			bullet.queue_free()
 			
+	
 	
 	

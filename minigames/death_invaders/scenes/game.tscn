@@ -4,7 +4,9 @@
 [ext_resource path="res://minigames/death_invaders/scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://minigames/death_invaders/scenes/dead.tscn" type="PackedScene" id=3]
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" groups=[
+"deads",
+]]
 
 script/script = ExtResource( 1 )
 
@@ -14,8 +16,32 @@ transform/pos = Vector2( 118.918, 180.82 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="dead" parent="enemies" instance=ExtResource( 3 )]
+[node name="dead9" parent="enemies" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 441.648, 181.635 )
+transform/pos = Vector2( 496.833, 182.314 )
+
+[node name="dead10" parent="enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 496.833, 278.314 )
+
+[node name="dead11" parent="enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 496.833, 97.3139 )
+
+[node name="dead12" parent="enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 421.833, 109.314 )
+
+[node name="dead13" parent="enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 421.833, 200.314 )
+
+[node name="dead14" parent="enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 391.833, 289.314 )
+
+[node name="dead15" parent="enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 452.833, 357.314 )
 
 
