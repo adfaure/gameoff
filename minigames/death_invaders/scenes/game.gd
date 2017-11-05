@@ -35,12 +35,11 @@ func _fixed_process(delta):
 	# Move the deads
 	var deads = get_tree().get_nodes_in_group("deads")
 	for dead in deads :
+		dead.move(Vector2(50 * -delta, 0))
 		var pos = dead.get_pos()
-		pos.x -= 50 * delta
+		
 		if pos.x + dead.get_item_rect().size.width/2 < 0 :
 			dead.queue_free()
-		else :
-			dead.set_pos(pos)
 	
 	
 	# if player has shoot then move the bullet and check collisions
