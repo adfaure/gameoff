@@ -6,10 +6,10 @@ extends KinematicBody2D
 
 func shoot():
 	# Load bullet scene for instancing
-	var scene = load("res://minigames/death_invaders/scenes/bullet.tscn")
+	var b_scene = load("res://minigames/death_invaders/scenes/bullet.tscn")
 	
 	# Create an instance of a bullet
-	var bullet = scene.instance()
+	var bullet = b_scene.instance()
 	
 	# Get player's position
 	var p_pos = self.get_pos()

@@ -6,11 +6,35 @@ func _input(event):
 			if !has_node("bullet") :
 				get_node("player").shoot()
 
-# TODO : Generate deads
 func generate_deads():
-	pass
+	var d_scene = load("res://minigames/death_invaders/scenes/dead.tscn")
+	
+	var dead = d_scene.instance()
+	
+	dead.set_pos(Vector2(
+		self.get_viewport_rect().size.width + dead.get_item_rect().size.width / 2,
+		rand_range(dead.get_item_rect().size.height / 2, 
+			self.get_viewport_rect().size.height - dead.get_item_rect().size.height / 2)))
+	
+	self.add_child(dead)
 
 func _ready():
+	
+	# Init player pos
+	var p_scene = load("res://minigames/death_invaders/scenes/player.tscn")
+	
+	var player = p_scene.instance()
+	player.set_pos(Vector2(
+		self.get_viewport_rect().size.width / 4,
+		self.get_viewport_rect().size.height / 2))
+	self.add_child(player)
+	
+	
+	# Generate some deads
+	randomize(true)
+	generate_deads()
+	
+	# Allows game loop to turn
 	set_process_input(true)
 	set_fixed_process(true)
 
@@ -55,6 +79,9 @@ func _fixed_process(delta):
 				bullet.get_collider().queue_free()
 			bullet.queue_free()
 	
+	# Generate some deads
+	if randf() < 0.015 :
+		generate_deads()
 	
 	
 	
