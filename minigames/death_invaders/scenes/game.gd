@@ -1,5 +1,7 @@
 extends Node2D
 
+var percent_gen = 0.015
+
 func _input(event):
 	if event.type == InputEvent.KEY :
 		if event.scancode == KEY_SPACE :
@@ -25,7 +27,7 @@ func _ready():
 	
 	var player = p_scene.instance()
 	player.set_pos(Vector2(
-		self.get_viewport_rect().size.width / 4,
+		self.get_viewport_rect().size.width / 10,
 		self.get_viewport_rect().size.height / 2))
 	self.add_child(player)
 	
@@ -46,7 +48,8 @@ func _fixed_process(delta):
 		player.move(Vector2(0, 100 * -delta))
 		# if out of screen then replace player
 		if player.get_pos().y - player.get_item_rect().size.height/2 < 0 : 
-			player.set_pos(Vector2(player.get_pos().x, player.get_item_rect().size.height/2)) 
+			player.set_pos(Vector2(player.get_pos().x, 
+				player.get_item_rect().size.height/2)) 
 	
 	elif Input.is_key_pressed(KEY_DOWN) : # move down
 		player.move(Vector2(0, 100 * delta))
@@ -84,7 +87,7 @@ func _fixed_process(delta):
 			
 	
 	# Generate some deads
-	if randf() < 0.015 :
+	if randf() < percent_gen :
 		generate_deads()
 	
 	get_node("player").decreaseShootdownCount(delta)
