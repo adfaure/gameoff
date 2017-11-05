@@ -3,7 +3,7 @@ extends Node2D
 func _input(event):
 	if event.type == InputEvent.KEY :
 		if event.scancode == KEY_SPACE :
-			if !has_node("bullet") :
+			if get_node("player").getShootdownCount() ==  0.0 :
 				get_node("player").shoot()
 
 func generate_deads():
@@ -63,26 +63,31 @@ func _fixed_process(delta):
 		var pos = dead.get_pos()
 		
 		if pos.x + dead.get_item_rect().size.width/2 < 0 :
+			dead.remove_from_group("deads")
 			dead.queue_free()
 	
 	
 	# if player has shoot then move the bullet and check collisions
-	if has_node("bullet") :
+	var bullets = get_tree().get_nodes_in_group("bullets")
+	for bullet in bullets :
 		# move the bullet
-		var bullet = get_node("bullet")
 		bullet.move(Vector2(200 * delta, 0))
 		var b_pos = bullet.get_pos()
 		
 		#check if bullet collides a dead or the and of screen
 		if bullet.is_colliding() || b_pos.x >= self.get_viewport_rect().size.width :
 			if bullet.is_colliding() : # if collides a dead, rekill the dead
+				bullet.get_collider().remove_from_group("deads")
 				bullet.get_collider().queue_free()
+			bullet.remove_from_group("bullets")
 			bullet.queue_free()
+			
 	
 	# Generate some deads
 	if randf() < 0.015 :
 		generate_deads()
 	
+	get_node("player").decreaseShootdownCount(delta)
 	
 	
 	

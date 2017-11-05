@@ -1,8 +1,7 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const SHOOTDOWN = 50.0
+var shootdown_count = 0.0
 
 func shoot():
 	# Load bullet scene for instancing
@@ -19,6 +18,17 @@ func shoot():
 	
 	self.get_parent().add_child(bullet)
 	
+	shootdown_count = SHOOTDOWN
+
+func decreaseShootdownCount(delta):
+	if shootdown_count > 0.0 :
+		shootdown_count -= 100.0 * delta
+	
+	if shootdown_count < 0.0 :
+		shootdown_count = 0.0
+
+func getShootdownCount():
+	return shootdown_count
 
 func _ready():
 	# Called every time the node is added to the scene.
