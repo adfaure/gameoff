@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://minigames/death_invaders/scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://fonts/pixeled.fnt" type="BitmapFont" id=2]
+
+[sub_resource type="BitmapFont" id=1]
+
+textures = [  ]
+chars = IntArray(  )
+kernings = IntArray(  )
+height = 1.0
+ascent = 0.0
+distance_field = false
+fallback = ExtResource( 2 )
 
 [node name="game" type="Node2D"]
 
@@ -17,6 +28,27 @@ margin/left = 21.0
 margin/top = 17.0
 margin/right = 61.0
 margin/bottom = 31.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="game_over" type="Label" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 403.0
+margin/bottom = 267.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0352941, 0.980392, 0, 1 )
+text = "GAME OVER"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
