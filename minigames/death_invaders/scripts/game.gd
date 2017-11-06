@@ -2,6 +2,7 @@ extends Node2D
 
 var percent_gen
 var score
+var game_over
 
 func _input(event):
 	if event.type == InputEvent.KEY :
@@ -27,6 +28,7 @@ func _ready():
 	percent_gen = 0.015
 	score = 0
 	get_node("score").set_text(String(score))
+	game_over = false
 	
 	# Init player pos
 	var p_scene = load("res://minigames/death_invaders/scenes/player.tscn")
@@ -71,7 +73,9 @@ func _fixed_process(delta):
 		dead.move(Vector2(50 * -delta, 0))
 		var pos = dead.get_pos()
 		
-		if pos.x + dead.get_item_rect().size.width/2 < 0 :
+		if dead.is_colliding() && dead.get_collider().get_name() == "player":
+			get_tree().set_pause(true)
+		elif pos.x + dead.get_item_rect().size.width/2 < 0 :
 			dead.remove_from_group("deads")
 			dead.queue_free()
 			score -= 10
@@ -95,11 +99,10 @@ func _fixed_process(delta):
 			bullet.remove_from_group("bullets")
 			bullet.queue_free()
 			
-	
 	# Generate some deads
 	if randf() < percent_gen :
 		generate_deads()
-	
+
 	get_node("player").decreaseShootdownCount(delta)
 	
 	
