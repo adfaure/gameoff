@@ -19,6 +19,9 @@ func shoot():
 	self.get_parent().add_child(bullet)
 	
 	shootdown_count = SHOOTDOWN
+	
+	# Emit sound
+	get_node("SamplePlayer").play("freesound__fins__shoot")
 
 func decreaseShootdownCount(delta):
 	if shootdown_count > 0.0 :

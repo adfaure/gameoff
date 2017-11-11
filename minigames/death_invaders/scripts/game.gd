@@ -31,7 +31,7 @@ func generate_deads():
 func _ready():
 	
 	# Init var
-	percent_gen = 0.025
+	percent_gen = 0.02
 	score = 0
 	over=false
 	
@@ -85,7 +85,7 @@ func _fixed_process(delta):
 		elif pos.x + dead.get_item_rect().size.width/2 < 0 :
 			dead.remove_from_group("deads")
 			dead.queue_free()
-			score -= 50
+			score -= 10
 			if score < 0 :
 				over=true
 				get_node("music_theme").stop()
