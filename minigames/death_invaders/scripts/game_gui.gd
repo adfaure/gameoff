@@ -38,4 +38,5 @@ func _fixed_process(delta):
 	
 	if get_node("Control/Viewport/game").is_over() :
 		get_node("game_over").show()
+		get_node("insert_coin").show()
 	
