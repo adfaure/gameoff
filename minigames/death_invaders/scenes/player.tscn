@@ -24,11 +24,6 @@ script/script = ExtResource( 1 )
 transform/pos = Vector2( 6.24622, -4.06678 )
 texture = ExtResource( 2 )
 
-[node name="Sprite1" type="Sprite" parent="."]
-
-transform/pos = Vector2( 6.24622, -4.06678 )
-texture = ExtResource( 2 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( -0.26823, -4.04617 )
