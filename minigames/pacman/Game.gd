@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var map = self.get_node("Map")
-onready var pac = self.get_node("Map/Pac")
+onready var pac = self.get_node("Pac")
 onready var camera = self.get_node("Camera")
 
 var shift = Vector2(32, 32)
@@ -16,7 +16,7 @@ var last_pos = Vector2()
 
 
 func _ready():
-	target_pos = pacpos_for_pos(map.world_to_map(pac.get_pos()))
+	target_pos = pac.get_pos()
 	scale_camera()
 	pac.get_node("AnimationPlayer").play("idle")
 	set_fixed_process(true)
@@ -37,14 +37,13 @@ func _fixed_process(delta):
 	handle_input()
 	var left_dist = target_pos.distance_to(pac.get_pos())
 	velocity = delta * MOTION_SPEED * direction
-	print("dist->", velocity.length(), "\tleft->", left_dist ,"\tpacpos->", pac.get_pos(), "\ttarget->", target_pos)
+	# print("dist->", velocity.length(), "\tleft->", left_dist ,"\tpacpos->", pac.get_pos(), "\ttarget->", target_pos)
 	if velocity.length() > left_dist:
 		#bug move_to seems to ignore scaling
-		print(get_scale())
-		pac.move_to(get_scale()*target_pos)
+		pac.move_to(target_pos * get_scale())
 	else:
-		pac.move(velocity)
-		
+		pac.move(velocity * get_scale())
+
 	if pac.get_pos() == target_pos:
 		process_input()
 		last_pos = target_pos
@@ -63,7 +62,6 @@ func _fixed_process(delta):
 			last_pos = tmp
 			pac.set_orientation(direction)
 			wainting_dir = Vector2()
-
 
 func can_turn(input_direction):
 	var grid_pos = map.world_to_map(pac.get_pos()) + input_direction
