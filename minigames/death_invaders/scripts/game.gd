@@ -80,6 +80,7 @@ func _fixed_process(delta):
 		
 		if dead.is_colliding() && dead.get_collider().get_name() == "player":
 			over=true
+			get_node("music_theme").stop()
 			get_tree().set_pause(true)
 		elif pos.x + dead.get_item_rect().size.width/2 < 0 :
 			dead.remove_from_group("deads")
@@ -87,6 +88,7 @@ func _fixed_process(delta):
 			score -= 50
 			if score < 0 :
 				over=true
+				get_node("music_theme").stop()
 				get_tree().set_pause(true)
 	
 	
