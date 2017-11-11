@@ -23,5 +23,19 @@ func _draw():
 	Vector2(v_pos.x, v_pos.y), 
 	Color(255, 255, 255), 5)
 	
+	
 func _ready():
-	pass
+	var score = get_node("Control/Viewport/game").get_score()
+	get_node("score").set_text(String(score))
+	
+	set_process_input(true)
+	set_fixed_process(true)
+	
+
+func _fixed_process(delta):
+	var score = get_node("Control/Viewport/game").get_score()
+	get_node("score").set_text(String(score))
+	
+	if get_node("Control/Viewport/game").is_over() :
+		get_node("game_over").show()
+	

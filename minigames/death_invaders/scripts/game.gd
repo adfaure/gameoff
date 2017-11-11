@@ -2,7 +2,13 @@ extends Node2D
 
 var percent_gen
 var score
-var game_over
+var over
+
+func get_score():
+	return score
+
+func is_over():
+	return over
 
 func _input(event):
 	if event.type == InputEvent.KEY :
@@ -25,10 +31,9 @@ func generate_deads():
 func _ready():
 	
 	# Init var
-	percent_gen = 0.015
+	percent_gen = 0.025
 	score = 0
-	get_node("score").set_text(String(score))
-	game_over = false
+	over=false
 	
 	# Init player pos
 	var p_scene = load("res://minigames/death_invaders/scenes/player.tscn")
@@ -53,14 +58,14 @@ func _fixed_process(delta):
 	# Move the player
 	var player = get_node("player")
 	if Input.is_key_pressed(KEY_UP) : # move up
-		player.move(Vector2(0, 100 * -delta))
+		player.move(Vector2(0, 200 * -delta))
 		# if out of screen then replace player
 		if player.get_pos().y - player.get_item_rect().size.height/2 < 0 : 
 			player.set_pos(Vector2(player.get_pos().x, 
 				player.get_item_rect().size.height/2)) 
 	
 	elif Input.is_key_pressed(KEY_DOWN) : # move down
-		player.move(Vector2(0, 100 * delta))
+		player.move(Vector2(0, 200 * delta))
 		# if out of screen then replace player
 		if player.get_pos().y + player.get_item_rect().size.height/2 > self.get_viewport_rect().size.height : 
 			player.set_pos(Vector2(player.get_pos().x, self.get_viewport_rect().size.height - player.get_item_rect().size.height/2)) 
@@ -74,13 +79,15 @@ func _fixed_process(delta):
 		var pos = dead.get_pos()
 		
 		if dead.is_colliding() && dead.get_collider().get_name() == "player":
-			get_node("game_over").show()
+			over=true
 			get_tree().set_pause(true)
 		elif pos.x + dead.get_item_rect().size.width/2 < 0 :
 			dead.remove_from_group("deads")
 			dead.queue_free()
-			score -= 10
-			get_node("score").set_text(String(score))
+			score -= 50
+			if score < 0 :
+				over=true
+				get_tree().set_pause(true)
 	
 	
 	# if player has shoot then move the bullet and check collisions
@@ -96,7 +103,6 @@ func _fixed_process(delta):
 				bullet.get_collider().remove_from_group("deads")
 				bullet.get_collider().queue_free()
 				score += 10
-				get_node("score").set_text(String(score))
 			bullet.remove_from_group("bullets")
 			bullet.queue_free()
 			
