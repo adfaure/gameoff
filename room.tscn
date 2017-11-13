@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://sprites/floor.png" type="Texture" id=1]
+[ext_resource path="res://sprites/wall.png" type="Texture" id=2]
+[ext_resource path="res://sprites/bar.png" type="Texture" id=3]
+[ext_resource path="res://sprites/cocktail.png" type="Texture" id=4]
+[ext_resource path="res://sprites/cocktail2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/arcade-puck2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/arcade-invader.png" type="Texture" id=7]
+[ext_resource path="res://sprites/guy.png" type="Texture" id=8]
+
+[node name="room" type="Node2D"]
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="floor" type="Sprite" parent="background"]
+
+transform/pos = Vector2( 0, 480 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 2000, 300 )
+
+[node name="wall" type="Sprite" parent="background"]
+
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 2000, 480 )
+
+[node name="bar" type="Node2D" parent="."]
+
+transform/pos = Vector2( 0, 248.857 )
+transform/scale = Vector2( 0.75, 0.75 )
+z/z = 2
+
+[node name="barSprite" type="Sprite" parent="bar"]
+
+transform/pos = Vector2( 0, 130.777 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="drink1" type="Sprite" parent="bar"]
+
+transform/pos = Vector2( 643.028, 54.3188 )
+transform/scale = Vector2( 0.379026, 0.379026 )
+texture = ExtResource( 4 )
+centered = false
+modulate = Color( 0.640625, 0.640625, 0.640625, 1 )
+
+[node name="drink2" type="Sprite" parent="bar"]
+
+transform/pos = Vector2( 519.654, 56.7863 )
+transform/scale = Vector2( 0.379026, 0.379026 )
+texture = ExtResource( 5 )
+centered = false
+flip_h = true
+modulate = Color( 0.660156, 0.660156, 0.660156, 1 )
+
+[node name="arcade cabinets" type="Node2D" parent="."]
+
+transform/pos = Vector2( 866.825, 0 )
+transform/scale = Vector2( 0.45, 0.45 )
+
+[node name="Puckman" type="Node2D" parent="arcade cabinets"]
+
+[node name="Puckman1" type="Sprite" parent="arcade cabinets/Puckman"]
+
+transform/pos = Vector2( 898.187, 0 )
+texture = ExtResource( 6 )
+centered = false
+modulate = Color( 0.699219, 0.699219, 0.699219, 1 )
+
+[node name="DeathInvader" type="Node2D" parent="arcade cabinets"]
+
+[node name="DeathInvader1" type="Sprite" parent="arcade cabinets/DeathInvader"]
+
+texture = ExtResource( 7 )
+centered = false
+modulate = Color( 0.738281, 0.738281, 0.738281, 1 )
+
+[node name="shopOwner" type="Sprite" parent="."]
+
+transform/pos = Vector2( 150.316, 131.944 )
+transform/scale = Vector2( 0.943356, 0.943356 )
+z/z = 1
+texture = ExtResource( 8 )
+centered = false
+
+
