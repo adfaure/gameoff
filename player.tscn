@@ -926,7 +926,7 @@ collision/margin = 0.08
 [node name="body" type="Sprite" parent="KinematicBody2D"]
 
 transform/pos = Vector2( 8.56344, 4.299 )
-transform/rot = -12.1285
+transform/rot = -16.8824
 texture = ExtResource( 1 )
 offset = Vector2( -2.05703, -6.99166 )
 __meta__ = {
@@ -954,8 +954,8 @@ __meta__ = {
 
 [node name="rightthigh" type="Sprite" parent="KinematicBody2D/body"]
 
-transform/pos = Vector2( -6.83822, 60.2274 )
-transform/rot = -406.692
+transform/pos = Vector2( -8.69098, 60.7995 )
+transform/rot = -335.275
 z/z = -1
 texture = ExtResource( 3 )
 offset = Vector2( 3.25781, 43.8886 )
@@ -965,8 +965,8 @@ __meta__ = {
 
 [node name="rightcalf" type="Sprite" parent="KinematicBody2D/body/rightthigh"]
 
-transform/pos = Vector2( 7.75252, 74.5076 )
-transform/rot = -86.9523
+transform/pos = Vector2( 7.75251, 74.5077 )
+transform/rot = -4.3039
 z/z = 2
 texture = ExtResource( 4 )
 offset = Vector2( -7.91232, 35.4412 )
@@ -976,8 +976,8 @@ __meta__ = {
 
 [node name="rightfoot" type="Sprite" parent="KinematicBody2D/body/rightthigh/rightcalf"]
 
-transform/pos = Vector2( -4.66622, 68.4204 )
-transform/rot = -9.77879
+transform/pos = Vector2( -7.66734, 65.1584 )
+transform/rot = 0.445611
 transform/scale = Vector2( 1, 1 )
 z/z = -1
 texture = ExtResource( 5 )
@@ -999,7 +999,7 @@ __meta__ = {
 [node name="lefttigh" type="Sprite" parent="KinematicBody2D/body"]
 
 transform/pos = Vector2( 11.6107, 52.498 )
-transform/rot = 84.458
+transform/rot = 4.11962
 z/z = -2
 texture = ExtResource( 6 )
 offset = Vector2( 6.30485, 39.8848 )
@@ -1010,7 +1010,7 @@ __meta__ = {
 [node name="leftcaft" type="Sprite" parent="KinematicBody2D/body/lefttigh"]
 
 transform/pos = Vector2( 14.61, 72.4402 )
-transform/rot = -65.2098
+transform/rot = -72.5385
 transform/scale = Vector2( 1, 1 )
 z/z = 1
 texture = ExtResource( 7 )
@@ -1022,7 +1022,7 @@ __meta__ = {
 [node name="leftfoot" type="Sprite" parent="KinematicBody2D/body/lefttigh/leftcaft"]
 
 transform/pos = Vector2( -7.27228, 62.4395 )
-transform/rot = 17.3777
+transform/rot = 15.4947
 transform/scale = Vector2( 1.05066, 0.999999 )
 z/z = -1
 texture = ExtResource( 5 )
@@ -1042,8 +1042,8 @@ __meta__ = {
 
 [node name="leftarm" type="Sprite" parent="KinematicBody2D/body"]
 
-transform/pos = Vector2( 33.4153, -68.155 )
-transform/rot = -69.344
+transform/pos = Vector2( 33.4882, -70.4392 )
+transform/rot = -1.5215
 z/z = -1
 texture = ExtResource( 8 )
 offset = Vector2( -0.3372, 28.3042 )
@@ -1053,8 +1053,8 @@ __meta__ = {
 
 [node name="leftforearm" type="Sprite" parent="KinematicBody2D/body/leftarm"]
 
-transform/pos = Vector2( 0.218073, 59.9478 )
-transform/rot = 25.3235
+transform/pos = Vector2( -3.2773, 62.4602 )
+transform/rot = 65.7626
 transform/scale = Vector2( 1, 1.05292 )
 texture = ExtResource( 9 )
 offset = Vector2( 5.65266, 30.4542 )
@@ -1064,8 +1064,8 @@ __meta__ = {
 
 [node name="lefthand" type="Sprite" parent="KinematicBody2D/body/leftarm/leftforearm"]
 
-transform/pos = Vector2( 6.18587, 50.382 )
-transform/rot = -14.9594
+transform/pos = Vector2( 6.25151, 50.9813 )
+transform/rot = 28.9555
 transform/scale = Vector2( 0.679888, 1.27802 )
 z/z = -1
 texture = ExtResource( 10 )
@@ -1085,8 +1085,8 @@ __meta__ = {
 
 [node name="rightarm" type="Sprite" parent="KinematicBody2D/body"]
 
-transform/pos = Vector2( -40.6943, -64.7002 )
-transform/rot = 62.3832
+transform/pos = Vector2( -31.8049, -63.2074 )
+transform/rot = -25.6092
 texture = ExtResource( 11 )
 offset = Vector2( -4.55724, 41.1256 )
 __meta__ = {
@@ -1095,8 +1095,8 @@ __meta__ = {
 
 [node name="rightforearm" type="Sprite" parent="KinematicBody2D/body/rightarm"]
 
-transform/pos = Vector2( -11.5656, 84.5244 )
-transform/rot = 90.0562
+transform/pos = Vector2( -11.7151, 82.4541 )
+transform/rot = 35.6279
 z/z = 2
 texture = ExtResource( 12 )
 offset = Vector2( 6.90104, 26.6009 )
@@ -1106,8 +1106,8 @@ __meta__ = {
 
 [node name="righthand" type="Sprite" parent="KinematicBody2D/body/rightarm/rightforearm"]
 
-transform/pos = Vector2( 13.3084, 52.7415 )
-transform/rot = -1.41787
+transform/pos = Vector2( 13.3084, 52.7414 )
+transform/rot = -9.01902
 transform/scale = Vector2( 1, 1 )
 z/z = -1
 texture = ExtResource( 10 )
