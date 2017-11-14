@@ -1,6 +1,11 @@
 extends Node2D
 
-var percent_gen
+# variables that a editable in the godot GUI
+export var PLAYER_SPEED = 200
+export var DEADS_SPEED = 50
+export var BULLET_SPEED = 200
+export var SPAWN_RATE = 0.02
+
 var score
 var over
 
@@ -11,27 +16,26 @@ func is_over():
 	return over
 
 func _input(event):
-	if event.type == InputEvent.KEY :
-		if event.scancode == KEY_SPACE :
-			if get_node("player").getShootdownCount() ==  0.0 :
-				get_node("player").shoot()
+	if event.is_action_pressed("ui_select") :
+		if get_node("player").getShootdownCount() ==  0.0 :
+			get_node("player").shoot()
 
-func generate_deads():
+func generate_deads(var count = 1):
 	var d_scene = load("res://minigames/death_invaders/scenes/dead.tscn")
-	
 	var dead = d_scene.instance()
 	
-	dead.set_pos(Vector2(
-		self.get_viewport_rect().size.width + dead.get_item_rect().size.width / 2,
-		rand_range(dead.get_item_rect().size.height / 2, 
-			self.get_viewport_rect().size.height - dead.get_item_rect().size.height / 2)))
+	for i in range(count) :
+		var dead_size = dead.get_item_rect().size
+		var random_height = rand_range(dead_size.height / 2,
+			self.get_viewport_rect().size.height - dead_size.height / 2)
+		dead.set_pos(Vector2(
+			self.get_viewport_rect().size.width + dead_size.width / 2, random_height))
 	
-	self.add_child(dead)
+		self.add_child(dead)
 
 func _ready():
 	
 	# Init var
-	percent_gen = 0.02
 	score = 0
 	over=false
 	
@@ -53,50 +57,51 @@ func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
 
+func _gameover():
+	over=true
+	get_node("music_theme").stop()
+	get_tree().set_pause(true)
+
+
 func _fixed_process(delta):
-	
 	# Move the player
 	var player = get_node("player")
-	if Input.is_key_pressed(KEY_UP) : # move up
-		player.move(Vector2(0, 200 * -delta))
+	if Input.is_action_pressed("ui_up") : # move up
+		player.move(Vector2(0, PLAYER_SPEED * -delta))
 		# if out of screen then replace player
 		if player.get_pos().y - player.get_item_rect().size.height/2 < 0 : 
-			player.set_pos(Vector2(player.get_pos().x, 
-				player.get_item_rect().size.height/2)) 
-	
-	elif Input.is_key_pressed(KEY_DOWN) : # move down
-		player.move(Vector2(0, 200 * delta))
+			player.set_pos(Vector2(player.get_pos().x, player.get_item_rect().size.height/2)) 
+			
+	elif Input.is_action_pressed("ui_down") : # move down
+		player.move(Vector2(0, PLAYER_SPEED * delta))
 		# if out of screen then replace player
-		if player.get_pos().y + player.get_item_rect().size.height/2 > self.get_viewport_rect().size.height : 
-			player.set_pos(Vector2(player.get_pos().x, self.get_viewport_rect().size.height - player.get_item_rect().size.height/2)) 
-	
+		var player_bottom = player.get_pos().y + player.get_item_rect().size.height/2
+		if  player_bottom > self.get_viewport_rect().size.height : 
+			var player_new_height = self.get_viewport_rect().size.height - player.get_item_rect().size.height/2
+			player.set_pos(Vector2(player.get_pos().x, player_new_height )) 
 	
 	
 	# Move the deads
 	var deads = get_tree().get_nodes_in_group("deads")
 	for dead in deads :
-		dead.move(Vector2(50 * -delta, 0))
+		dead.move(Vector2(DEADS_SPEED * -delta, 0))
 		var pos = dead.get_pos()
 		
 		if dead.is_colliding() && dead.get_collider().get_name() == "player":
-			over=true
-			get_node("music_theme").stop()
-			get_tree().set_pause(true)
+			_gameover()
 		elif pos.x + dead.get_item_rect().size.width/2 < 0 :
 			dead.remove_from_group("deads")
 			dead.queue_free()
 			score -= 10
 			if score < 0 :
-				over=true
-				get_node("music_theme").stop()
-				get_tree().set_pause(true)
+				_gameover()
 	
 	
 	# if player has shoot then move the bullet and check collisions
 	var bullets = get_tree().get_nodes_in_group("bullets")
 	for bullet in bullets :
 		# move the bullet
-		bullet.move(Vector2(200 * delta, 0))
+		bullet.move(Vector2(BULLET_SPEED * delta, 0))
 		var b_pos = bullet.get_pos()
 		
 		#check if bullet collides a dead or the and of screen
@@ -109,7 +114,7 @@ func _fixed_process(delta):
 			bullet.queue_free()
 			
 	# Generate some deads
-	if randf() < percent_gen :
+	if randf() < SPAWN_RATE :
 		generate_deads()
 
 	get_node("player").decreaseShootdownCount(delta)
