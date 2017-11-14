@@ -15,14 +15,14 @@
 
 [node name="player" type="Node2D" parent="."]
 
+transform/pos = Vector2( 344.155, 450.229 )
 script/script = ExtResource( 1 )
-RUN_SPEED = 5
+RUN_SPEED = 4
 WALK_SPEED = 1
 BASE_SPEED = 300
 
 [node name="player_scn" parent="player" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 117.953, 419.867 )
 transform/scale = Vector2( 1.41947, 1.41947 )
 z/z = 5
 
@@ -39,40 +39,7 @@ limit/right = 10000000
 limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
-smoothing/enable = false
-smoothing/speed = 5.0
-drag_margin/left = 0.0
-drag_margin/top = 0.0
-drag_margin/right = 0.0
-drag_margin/bottom = 0.0
-
-[node name="player1" type="Node2D" parent="."]
-
-script/script = ExtResource( 1 )
-RUN_SPEED = 5
-WALK_SPEED = 1
-BASE_SPEED = 300
-
-[node name="player_scn" parent="player1" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 117.953, 419.867 )
-transform/scale = Vector2( 1.41947, 1.41947 )
-z/z = 5
-
-[node name="Camera2D" type="Camera2D" parent="player1/player_scn"]
-
-transform/scale = Vector2( 0.704486, 0.704486 )
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-drag_margin/h_enabled = true
-drag_margin/v_enabled = true
-smoothing/enable = false
+smoothing/enable = true
 smoothing/speed = 5.0
 drag_margin/left = 0.0
 drag_margin/top = 0.0
@@ -87,15 +54,16 @@ transform/pos = Vector2( 0, 480 )
 texture = ExtResource( 3 )
 centered = false
 region = true
-region_rect = Rect2( 0, 0, 2000, 300 )
+region_rect = Rect2( 0, 0, 2000, 500 )
 
 [node name="wall" type="Sprite" parent="background"]
 
-transform/pos = Vector2( 3.34033, 0 )
+transform/pos = Vector2( 0, -150 )
+z/z = -1
 texture = ExtResource( 4 )
 centered = false
 region = true
-region_rect = Rect2( 0, 0, 2000, 480 )
+region_rect = Rect2( 0, 0, 2000, 700 )
 
 [node name="bar" type="Node2D" parent="."]
 
