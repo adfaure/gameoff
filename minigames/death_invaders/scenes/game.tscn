@@ -7,6 +7,10 @@
 
 process/pause_mode = 1
 script/script = ExtResource( 1 )
+PLAYER_SPEED = 200
+DEADS_SPEED = 50
+BULLET_SPEED = 200
+SPAWN_RATE = 0.02
 
 [node name="music_theme" type="StreamPlayer" parent="."]
 
