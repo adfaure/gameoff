@@ -12,12 +12,7 @@
 [ext_resource path="res://sprites/player/righthand.png" type="Texture" id=10]
 [ext_resource path="res://sprites/player/rightarm.png" type="Texture" id=11]
 [ext_resource path="res://sprites/player/rightforearm.png" type="Texture" id=12]
-
-[sub_resource type="CapsuleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 9.84849
-height = 3.75137
+[ext_resource path="res://sprites/player/lefthand.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -43,7 +38,7 @@ tracks/1/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -7.6671, 65.1582 ), Vector2( -7.6671, 65.1582 ) ]
+"values": [ Vector2( -7.6671, 65.1582 ), Vector2( -6.45499, 63.7284 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("rightthigh/rightcalf/rightfoot:transform/rot")
@@ -53,7 +48,7 @@ tracks/2/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ -17.948, -17.948 ]
+"values": [ -12.2619, -12.2139 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("rightthigh/rightcalf:transform/pos")
@@ -63,7 +58,7 @@ tracks/3/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 7.75252, 74.5076 ), Vector2( 7.75252, 74.5076 ) ]
+"values": [ Vector2( 6.86213, 82.5215 ), Vector2( 5.2002, 84.3832 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("rightthigh/rightcalf:transform/rot")
@@ -73,7 +68,7 @@ tracks/4/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ 5.47791, 5.47791 ]
+"values": [ 6.95874, 4.9449 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("rightthigh:transform/pos")
@@ -83,7 +78,7 @@ tracks/5/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -10.8195, 62.2989 ), Vector2( -9.58642, 60.6024 ) ]
+"values": [ Vector2( -9.68417, 70.874 ), Vector2( -7.89685, 69.6218 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("rightthigh:transform/rot")
@@ -93,7 +88,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ -357.091, -357.091 ]
+"values": [ -361.582, -360.225 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("head:transform/pos")
@@ -153,7 +148,7 @@ tracks/12/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 10.6248, 53.8666 ), Vector2( 10.0828, 53.2118 ) ]
+"values": [ Vector2( 7.32381, 49.9589 ), Vector2( 10.0828, 53.2118 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("leftarm/leftforearm:transform/pos")
@@ -183,7 +178,7 @@ tracks/15/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 29.9638, -71.8867 ), Vector2( 29.8153, -74.5901 ) ]
+"values": [ Vector2( 30.5782, -67.9423 ), Vector2( 29.1591, -68.6937 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("leftarm:transform/rot")
@@ -223,7 +218,7 @@ tracks/19/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ) ]
+"values": [ Vector2( 14.61, 72.4402 ), Vector2( 14.9238, 72.4071 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("lefttigh/leftcaft:transform/rot")
@@ -243,7 +238,7 @@ tracks/21/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 10.4921, 52.7269 ), Vector2( 12.2398, 52.3693 ) ]
+"values": [ Vector2( 10.9178, 66.2329 ), Vector2( 12.1748, 65.2697 ) ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("lefttigh:transform/rot")
@@ -283,7 +278,7 @@ tracks/25/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -11.5646, 84.5386 ), Vector2( -11.5646, 84.5386 ) ]
+"values": [ Vector2( -8.59521, 82.1532 ), Vector2( -7.6056, 81.691 ) ]
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("rightarm/rightforearm:transform/rot")
@@ -303,7 +298,7 @@ tracks/27/keys = {
 "times": FloatArray( 0, 0.8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -29.7818, -69.93 ), Vector2( -27.9719, -72.1099 ) ]
+"values": [ Vector2( -33.8434, -63.846 ), Vector2( -33.7464, -61.5397 ) ]
 }
 tracks/28/type = "value"
 tracks/28/path = NodePath("rightarm:transform/rot")
@@ -315,18 +310,8 @@ tracks/28/keys = {
 "update": 0,
 "values": [ 4.17285, 4.25488 ]
 }
-tracks/29/type = "value"
-tracks/29/path = NodePath("../CollisionShape2D:transform/rot")
-tracks/29/interp = 1
-tracks/29/imported = false
-tracks/29/keys = {
-"times": FloatArray( 0.460629 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource/name = "run"
 length = 1.4
@@ -340,7 +325,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -10.1118, 28.1446, -21.071, 8.0933, -1.06824 ]
+"values": [ -10.1118, 28.8788, -21.071, -21.071, -2.31497 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("rightthigh/rightcalf:transform/rot")
@@ -350,7 +335,7 @@ tracks/1/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -86.6169, -125.145, -46.9704, -53.5383, 5.44199 ]
+"values": [ -86.6169, -129.039, -46.9704, -46.9704, 7.80089 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("rightthigh:transform/rot")
@@ -360,7 +345,7 @@ tracks/2/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -407.632, -299.555, -264.13, -279.705, -346.275 ]
+"values": [ -407.632, -296.395, -264.13, -264.13, -347.387 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("head:transform/rot")
@@ -390,7 +375,7 @@ tracks/5/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -15.1941, 11.7752, 34.7903, 27.8005 ]
+"values": [ -15.1941, 11.7752, 34.8919, 27.8005 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("leftarm/leftforearm:transform/rot")
@@ -400,7 +385,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 25.2758, 30.7566, 98.8035, 59.2222 ]
+"values": [ 25.2758, 30.7566, 98.6197, 59.2222 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("leftarm:transform/rot")
@@ -410,7 +395,7 @@ tracks/7/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -69.911, -4.76443, 60.1802, -13.7353 ]
+"values": [ -69.911, -4.76443, 60.2643, -13.7353 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("lefttigh/leftcaft/leftfoot:transform/rot")
@@ -460,7 +445,7 @@ tracks/12/keys = {
 "times": FloatArray( 0, 0.3, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 90.2693, 65.7923, 5.19064 ]
+"values": [ 41.6529, 65.7923, 5.19064 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("rightarm:transform/rot")
@@ -470,7 +455,7 @@ tracks/13/keys = {
 "times": FloatArray( 0, 0.3, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 63.1783, -28.1817, -75.0672 ]
+"values": [ 50.1446, -28.1817, -75.0672 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("rightthigh/rightcalf/rightfoot:transform/pos")
@@ -480,7 +465,7 @@ tracks/14/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -4.63987, 68.449 ), Vector2( -7.66733, 65.1583 ), Vector2( -7.66733, 65.1583 ), Vector2( -7.6673, 65.1582 ), Vector2( -7.66735, 65.1585 ) ]
+"values": [ Vector2( -0.694473, 63.5959 ), Vector2( -3.30394, 66.6164 ), Vector2( -7.66733, 65.1583 ), Vector2( -7.82649, 68.4258 ), Vector2( -9.97331, 67.2485 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("rightthigh/rightcalf:transform/pos")
@@ -490,7 +475,7 @@ tracks/15/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 7.75252, 74.5076 ), Vector2( 7.75253, 74.5077 ), Vector2( 7.75252, 74.5076 ), Vector2( 7.75252, 74.5076 ), Vector2( 7.75251, 74.5077 ) ]
+"values": [ Vector2( -5.0499, 82.1574 ), Vector2( 0.186142, 85.101 ), Vector2( 7.75252, 74.5076 ), Vector2( 1.11517, 80.9021 ), Vector2( 7.75251, 74.5077 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("rightthigh:transform/pos")
@@ -500,7 +485,7 @@ tracks/16/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -6.82146, 60.2223 ), Vector2( -8.74675, 60.8167 ), Vector2( -10.0303, 61.2131 ), Vector2( -10.0303, 61.2131 ), Vector2( -8.42587, 60.7177 ) ]
+"values": [ Vector2( -6.82146, 60.2223 ), Vector2( -12.1025, 75.1788 ), Vector2( -10.0303, 61.2131 ), Vector2( -10.0303, 61.2131 ), Vector2( -8.3076, 66.8776 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("head:transform/pos")
@@ -520,7 +505,7 @@ tracks/18/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 6.18538, 50.3775 ), Vector2( 6.24214, 50.8957 ), Vector2( 6.29895, 51.4139 ), Vector2( 6.24212, 50.8956 ) ]
+"values": [ Vector2( 6.18538, 50.3775 ), Vector2( 0.456545, 50.7082 ), Vector2( 6.58273, 56.5297 ), Vector2( 6.24212, 50.8956 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath(".:transform/pos")
@@ -550,7 +535,7 @@ tracks/21/keys = {
 "times": FloatArray( 0, 0.3, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 33.4596, -68.1268 ), Vector2( 28.3788, -71.3685 ), Vector2( 31.7665, -71.1772 ), Vector2( 33.829, -70.2931 ) ]
+"values": [ Vector2( 34.7207, -59.9183 ), Vector2( 32.4029, -65.8963 ), Vector2( 27.3639, -67.5442 ), Vector2( 32.9185, -66.4682 ) ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("lefttigh/leftcaft/leftfoot:transform/pos")
@@ -570,7 +555,7 @@ tracks/23/keys = {
 "times": FloatArray( 0, 0.3, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ) ]
+"values": [ Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ), Vector2( 11.9882, 73.2876 ), Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ), Vector2( 14.61, 72.4402 ) ]
 }
 tracks/24/type = "value"
 tracks/24/path = NodePath("lefttigh:transform/pos")
@@ -580,7 +565,7 @@ tracks/24/keys = {
 "times": FloatArray( 0, 0.3, 0.3, 0.7, 0.7, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ) ]
+"values": [ Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 11.6107, 52.498 ), Vector2( 8.77019, 60.0894 ) ]
 }
 tracks/25/type = "value"
 tracks/25/path = NodePath("rightarm/rightforearm/righthand:transform/pos")
@@ -590,7 +575,7 @@ tracks/25/keys = {
 "times": FloatArray( 0, 0.3, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 13.3084, 52.7415 ), Vector2( 13.3084, 52.7416 ), Vector2( 13.3084, 52.7414 ) ]
+"values": [ Vector2( 13.3084, 52.7415 ), Vector2( 10.4669, 59.6632 ), Vector2( 13.3084, 52.7414 ) ]
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("rightarm/rightforearm:transform/pos")
@@ -600,7 +585,7 @@ tracks/26/keys = {
 "times": FloatArray( 0, 0.3, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -11.5646, 84.5386 ), Vector2( -11.6817, 82.9158 ), Vector2( -11.7989, 81.293 ) ]
+"values": [ Vector2( -8.204, 82.1797 ), Vector2( -9.87413, 81.6961 ), Vector2( -11.7989, 81.293 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("rightarm:transform/pos")
@@ -610,42 +595,31 @@ tracks/27/keys = {
 "times": FloatArray( 0, 0.3, 0.7 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -40.7788, -64.7237 ), Vector2( -31.0751, -62.0261 ), Vector2( -26.806, -62.3629 ) ]
+"values": [ Vector2( -38.1057, -53.242 ), Vector2( -30.0582, -59.8692 ), Vector2( -28.0865, -57.2866 ) ]
 }
 tracks/28/type = "value"
 tracks/28/path = NodePath("leftarm/leftforearm/lefthand:texture")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0.7 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0.7, 1 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 13 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("../CollisionShape2D:transform/pos")
+tracks/29/path = NodePath("rightarm/rightforearm/righthand:texture")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0, 0.7 ),
+"times": FloatArray( 0.7, 1 ),
 "transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 14.5559, -19.7928 ), Vector2( 19.0684, -20.6953 ) ]
-}
-tracks/30/type = "value"
-tracks/30/path = NodePath("../CollisionShape2D:transform/rot")
-tracks/30/interp = 1
-tracks/30/imported = false
-tracks/30/keys = {
-"times": FloatArray( 0, 0.7 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ -8.35464, -17.446 ]
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 10 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "walk"
 length = 1.0
 loop = true
 step = 0.1
@@ -677,7 +651,7 @@ tracks/2/keys = {
 "times": FloatArray( 0, 0.3, 0.5, 0.8 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 7.75252, 74.5076 ), Vector2( 7.75253, 74.5076 ), Vector2( 7.75252, 74.5076 ), Vector2( 7.75252, 74.5076 ) ]
+"values": [ Vector2( 1.62437, 78.6863 ), Vector2( 2.52848, 80.623 ), Vector2( 7.75252, 74.5076 ), Vector2( 7.75252, 74.5076 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("rightthigh/rightcalf:transform/rot")
@@ -797,7 +771,7 @@ tracks/14/keys = {
 "times": FloatArray( 0, 0.5 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 29.9638, -71.8867 ), Vector2( 29.9638, -71.8867 ) ]
+"values": [ Vector2( 33.2481, -67.7588 ), Vector2( 30.2914, -67.9991 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("leftarm:transform/rot")
@@ -897,7 +871,7 @@ tracks/24/keys = {
 "times": FloatArray( 0, 0.5 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -11.5646, 84.5386 ), Vector2( -11.5646, 84.5386 ) ]
+"values": [ Vector2( -9.95273, 80.6963 ), Vector2( -8.03144, 82.8136 ) ]
 }
 tracks/25/type = "value"
 tracks/25/path = NodePath("rightarm/rightforearm:transform/rot")
@@ -917,7 +891,7 @@ tracks/26/keys = {
 "times": FloatArray( 0, 0.5 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -28.8866, -67.0344 ), Vector2( -28.8866, -67.0344 ) ]
+"values": [ Vector2( -34.1447, -59.7397 ), Vector2( -31.3519, -61.4432 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("rightarm:transform/rot")
@@ -949,41 +923,19 @@ tracks/29/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
-tracks/30/type = "value"
-tracks/30/path = NodePath("../CollisionShape2D:transform/pos")
-tracks/30/interp = 1
-tracks/30/imported = false
-tracks/30/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Vector2( 13.9472, -11.9578 ) ]
-}
-tracks/31/type = "value"
-tracks/31/path = NodePath("../CollisionShape2D:transform/rot")
-tracks/31/interp = 1
-tracks/31/imported = false
-tracks/31/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ -2.62711 ]
-}
 
 [node name="Node2D" type="KinematicBody2D"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 3.07117, 0.140917, -0.444364, 9.68452, 13.9472, -11.9578 )
-shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 
 [node name="body" type="Sprite" parent="."]
 
-transform/pos = Vector2( 10.7187, 2.85776 )
-transform/rot = -4.81669
+transform/pos = Vector2( 8.56344, 4.299 )
+transform/rot = -19.546
+z/z = 2
 texture = ExtResource( 1 )
 offset = Vector2( -2.05703, -6.99166 )
 __meta__ = {
@@ -992,10 +944,8 @@ __meta__ = {
 
 [node name="head" type="Sprite" parent="body"]
 
-editor/display_folded = true
-transform/pos = Vector2( -8.19428, -93.4368 )
-transform/rot = -6.22589
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( -8.67921, -93.522 )
+transform/rot = -9.37718
 z/z = 1
 texture = ExtResource( 2 )
 offset = Vector2( 1.17764, -19.908 )
@@ -1012,9 +962,8 @@ __meta__ = {
 
 [node name="rightthigh" type="Sprite" parent="body"]
 
-editor/display_folded = true
-transform/pos = Vector2( -11.7861, 61.148 )
-transform/rot = -328.987
+transform/pos = Vector2( -10.0303, 61.2131 )
+transform/rot = -264.13
 z/z = -1
 texture = ExtResource( 3 )
 offset = Vector2( 3.25781, 43.8886 )
@@ -1024,32 +973,31 @@ __meta__ = {
 
 [node name="rightcalf" type="Sprite" parent="body/rightthigh"]
 
-transform/pos = Vector2( 7.75253, 74.5076 )
-transform/rot = -37.2809
-z/z = 2
+transform/pos = Vector2( 5.61087, 82.0168 )
+transform/rot = -46.9704
+z/z = 3
 texture = ExtResource( 4 )
-offset = Vector2( -7.91232, 35.4412 )
+offset = Vector2( -1.52981, 39.2868 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="rightfoot" type="Sprite" parent="body/rightthigh/rightcalf"]
 
-transform/pos = Vector2( -8.39914, 65.7206 )
-transform/rot = 12.0378
+transform/pos = Vector2( -8.47786, 71.6952 )
+transform/rot = -21.071
 transform/scale = Vector2( 1, 1 )
 z/z = -1
 texture = ExtResource( 5 )
-offset = Vector2( 17.1218, 11.443 )
+offset = Vector2( 19.3192, 5.36521 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Position2D1" type="Position2D" parent="body/rightthigh/rightcalf/rightfoot"]
 
-transform/pos = Vector2( 39.2765, 13.064 )
+transform/pos = Vector2( 41.4739, 6.98619 )
 transform/rot = -0.583756
-transform/scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
@@ -1057,9 +1005,8 @@ __meta__ = {
 
 [node name="lefttigh" type="Sprite" parent="body"]
 
-editor/display_folded = true
-transform/pos = Vector2( 11.5845, 68.2011 )
-transform/rot = -8.41759
+transform/pos = Vector2( 11.6107, 52.498 )
+transform/rot = -49.7995
 z/z = -2
 texture = ExtResource( 6 )
 offset = Vector2( 6.30485, 39.8848 )
@@ -1069,10 +1016,9 @@ __meta__ = {
 
 [node name="leftcaft" type="Sprite" parent="body/lefttigh"]
 
-transform/pos = Vector2( 14.61, 72.4403 )
-transform/rot = 13.4189
-transform/scale = Vector2( 1, 1 )
-z/z = 1
+transform/pos = Vector2( 14.61, 72.4402 )
+transform/rot = -60.1022
+z/z = -1
 texture = ExtResource( 7 )
 offset = Vector2( -6.69676, 30.8017 )
 __meta__ = {
@@ -1081,8 +1027,8 @@ __meta__ = {
 
 [node name="leftfoot" type="Sprite" parent="body/lefttigh/leftcaft"]
 
-transform/pos = Vector2( -7.27229, 62.4395 )
-transform/rot = -5.29933
+transform/pos = Vector2( -7.27225, 62.4395 )
+transform/rot = -2.54151
 transform/scale = Vector2( 1.05066, 0.999999 )
 z/z = -1
 texture = ExtResource( 5 )
@@ -1095,94 +1041,89 @@ __meta__ = {
 
 transform/pos = Vector2( 39.7311, 7.9789 )
 transform/rot = -0.583756
-transform/scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="leftarm" type="Sprite" parent="body"]
 
-editor/display_folded = true
-transform/pos = Vector2( 29.9638, -71.8867 )
-transform/rot = 8.16643
+transform/pos = Vector2( 27.3639, -67.5442 )
+transform/rot = 60.2643
 z/z = -1
 texture = ExtResource( 8 )
-offset = Vector2( -0.3372, 28.3042 )
+offset = Vector2( -0.506419, 30.484 )
 __meta__ = {
 "_edit_ik_": true
 }
 
 [node name="leftforearm" type="Sprite" parent="body/leftarm"]
 
-transform/pos = Vector2( 1.3408, 61.3046 )
-transform/rot = -7.05282
+transform/pos = Vector2( -5.80019, 64.2736 )
+transform/rot = 98.6197
 transform/scale = Vector2( 1, 1.05292 )
 texture = ExtResource( 9 )
-offset = Vector2( 5.65266, 30.4542 )
+offset = Vector2( 4.62432, 27.0262 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="lefthand" type="Sprite" parent="body/leftarm/leftforearm"]
 
-transform/pos = Vector2( 10.6248, 53.8666 )
-transform/rot = 2.91496
-transform/scale = Vector2( 0.679888, 1.27802 )
+transform/pos = Vector2( 6.58273, 56.5297 )
+transform/rot = 34.8919
+transform/scale = Vector2( 0.679831, 1.27813 )
 z/z = -1
 texture = ExtResource( 10 )
-offset = Vector2( 4.12959, 11.4291 )
+offset = Vector2( 0.996198, 9.03103 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Position2D3" type="Position2D" parent="body/leftarm/leftforearm/lefthand"]
 
-transform/pos = Vector2( 2.47098, 12.9783 )
+transform/pos = Vector2( 1.07353, 21.676 )
 transform/rot = -0.583756
-transform/scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="rightarm" type="Sprite" parent="body"]
 
-editor/display_folded = true
-transform/pos = Vector2( -28.8866, -67.0344 )
-transform/rot = -5.53958
+transform/pos = Vector2( -28.0865, -57.2866 )
+transform/rot = -75.0672
 texture = ExtResource( 11 )
-offset = Vector2( -4.55724, 41.1256 )
+offset = Vector2( -1.06524, 43.5609 )
 __meta__ = {
 "_edit_ik_": true
 }
 
 [node name="rightforearm" type="Sprite" parent="body/rightarm"]
 
-transform/pos = Vector2( -11.5646, 84.5386 )
-transform/rot = 15.9255
+transform/pos = Vector2( -11.7989, 81.293 )
+transform/rot = 5.19064
+transform/scale = Vector2( 1, 1 )
 z/z = 2
 texture = ExtResource( 12 )
-offset = Vector2( 6.90104, 26.6009 )
+offset = Vector2( 6.66196, 28.1231 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="righthand" type="Sprite" parent="body/rightarm/rightforearm"]
 
-transform/pos = Vector2( 13.3083, 52.7412 )
-transform/rot = -7.6083
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( 13.3084, 52.7414 )
+transform/rot = -13.188
 z/z = -1
-texture = ExtResource( 10 )
-offset = Vector2( 5.50167, 9.33523 )
+texture = ExtResource( 13 )
+offset = Vector2( 7.44795, 7.87574 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Position2D4" type="Position2D" parent="body/rightarm/rightforearm/righthand"]
 
-transform/pos = Vector2( 13.4438, 18.1188 )
+transform/pos = Vector2( 15.3901, 16.6593 )
 transform/rot = -0.583756
-transform/scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_bone_": true
 }
@@ -1193,21 +1134,11 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/idle = SubResource( 1 )
-anims/run = SubResource( 3 )
-anims/walk = SubResource( 2 )
+anims/run = SubResource( 2 )
+anims/walk = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-transform/pos = Vector2( 13.9472, -11.9578 )
-transform/rot = -2.62711
-transform/scale = Vector2( 3.0744, 9.69471 )
-z/z = 3
-shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 0
 
 
