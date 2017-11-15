@@ -18,9 +18,15 @@ func _ready():
 func squared_distance (a, b):
 	return (a.get_global_pos() - b.get_global_pos()).length_squared()
 
+func end_game():
+	set_fixed_process(true)
+	self.find_node("Camera2D").make_current()
+
 func _fixed_process(delta):
 	var boost = BASE_SPEED
 	var run = false
+	
+	
 	
 	var input_dir = Vector2(0, 0);
 	if Input.is_action_pressed("ui_right"): input_dir += Vector2(1,0);
@@ -38,8 +44,14 @@ func _fixed_process(delta):
 					nearest["dist"] = new_dist
 			var camera = nearest["node"].find_node("Camera2D")
 			if camera  && nearest["dist"] < player_range * player_range:#using squared distances
+				var game = nearest["node"].find_node("game")
+				
+				game.connect("party_ended",self,"end_game") # signal
 				camera.make_current()
-				nearest["node"].find_node("game")._play()
+				set_fixed_process(false)
+				
+				game._play()
+				
 		
 	var animation
 	if (input_dir.x != 0) :
@@ -67,5 +79,3 @@ func _fixed_process(delta):
 	if (input_dir.x < 0 && !isFlipped) ||  (input_dir.x > 0 && isFlipped) :
 		set_scale(Vector2(-scale.x,scale.y))
 		isFlipped = not isFlipped
-	
-	

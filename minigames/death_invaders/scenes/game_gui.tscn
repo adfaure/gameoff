@@ -45,8 +45,6 @@ gui/disable_input = false
 
 [node name="game" parent="Control/Viewport" instance=ExtResource( 3 )]
 
-over = true
-
 [node name="score" type="Label" parent="."]
 
 focus/ignore_mouse = true

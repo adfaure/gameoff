@@ -8,6 +8,7 @@ export var SPAWN_RATE = 0.02
 
 var score
 export var over = true
+signal party_ended
 
 func get_score():
 	return score
@@ -32,6 +33,7 @@ func _play():
 	if not over : return
 	over= false
 	score = 0
+	get_node("music_theme").play()
 	# Init player pos
 	var p_scene = load("res://minigames/death_invaders/scenes/player.tscn")
 	
@@ -48,7 +50,11 @@ func _play():
 func _gameover():
 	over=true
 	get_node("music_theme").stop()
-	get_tree().set_pause(true)
+	get_node("player").queue_free()
+	for dead in get_tree().get_nodes_in_group("deads"):
+		dead.queue_free()
+	emit_signal("party_ended")
+	#get_tree().set_pause(true)
 
 
 func _ready():

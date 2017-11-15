@@ -986,7 +986,6 @@ __meta__ = {
 
 transform/pos = Vector2( -6.54333, 63.8326 )
 transform/rot = -12.2174
-transform/scale = Vector2( 1, 1 )
 z/z = -1
 texture = ExtResource( 5 )
 offset = Vector2( 19.3192, 5.36521 )
@@ -1101,7 +1100,6 @@ __meta__ = {
 
 transform/pos = Vector2( -7.67772, 81.7246 )
 transform/rot = -8.41129
-transform/scale = Vector2( 1, 1 )
 z/z = 2
 texture = ExtResource( 12 )
 offset = Vector2( 6.66196, 28.1231 )

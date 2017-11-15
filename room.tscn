@@ -49,8 +49,6 @@ drag_margin/bottom = 0.0
 
 [node name="background" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="floor" type="Sprite" parent="background"]
 
 transform/pos = Vector2( 0, 480 )
@@ -70,7 +68,6 @@ region_rect = Rect2( 0, 0, 2000, 700 )
 
 [node name="bar" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 248.857 )
 transform/scale = Vector2( 0.75, 0.75 )
 z/z = 2
@@ -117,29 +114,29 @@ modulate = Color( 0.699219, 0.699219, 0.699219, 1 )
 
 transform/pos = Vector2( 595.789, 711.917 )
 
-[node name="Camera2D" type="Camera2D" parent="arcade_cabinets/DeathInvader1"]
+[node name="game_gui" parent="arcade_cabinets/DeathInvader1" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( -42.1975, -250.565 )
+transform/pos = Vector2( -353.674, -555.186 )
+
+[node name="Camera2D" type="Camera2D" parent="arcade_cabinets/DeathInvader1/game_gui"]
+
+transform/pos = Vector2( 322.902, 330.325 )
 anchor_mode = 1
 rotating = false
 current = false
-zoom = Vector2( 0.33, 0.33 )
+zoom = Vector2( 0.3, 0.3 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
 limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
-smoothing/enable = true
+smoothing/enable = false
 smoothing/speed = 5.0
-drag_margin/left = 0.0
-drag_margin/top = 0.0
-drag_margin/right = 0.0
-drag_margin/bottom = 0.0
-
-[node name="game_gui" parent="arcade_cabinets/DeathInvader1" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( -353.674, -555.186 )
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 [node name="shopOwner" type="Sprite" parent="."]
 
