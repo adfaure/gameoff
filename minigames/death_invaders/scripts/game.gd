@@ -7,18 +7,13 @@ export var BULLET_SPEED = 200
 export var SPAWN_RATE = 0.02
 
 var score
-var over
+export var over = true
 
 func get_score():
 	return score
 
 func is_over():
 	return over
-
-func _input(event):
-	if event.is_action_pressed("ui_select") :
-		if get_node("player").getShootdownCount() ==  0.0 :
-			get_node("player").shoot()
 
 func generate_deads(var count = 1):
 	var d_scene = load("res://minigames/death_invaders/scenes/dead.tscn")
@@ -33,12 +28,10 @@ func generate_deads(var count = 1):
 	
 		self.add_child(dead)
 
-func _ready():
-	
-	# Init var
+func _play():
+	if not over : return
+	over= false
 	score = 0
-	over=false
-	
 	# Init player pos
 	var p_scene = load("res://minigames/death_invaders/scenes/player.tscn")
 	
@@ -48,14 +41,9 @@ func _ready():
 		self.get_viewport_rect().size.height / 2))
 	self.add_child(player)
 	
-	
 	# Generate some deads
 	randomize(true)
 	generate_deads()
-	
-	# Allows game loop to turn
-	set_process_input(true)
-	set_fixed_process(true)
 
 func _gameover():
 	over=true
@@ -63,7 +51,22 @@ func _gameover():
 	get_tree().set_pause(true)
 
 
+func _ready():
+	# Init var
+	score = 0
+	over=true
+		
+	# Allows game loop to turn
+	set_process_input(true)
+	set_fixed_process(true)
+
+
+
 func _fixed_process(delta):
+	
+	if over && Input.is_action_pressed("ui_cancel"): _play()
+	if over : return
+	
 	# Move the player
 	var player = get_node("player")
 	if Input.is_action_pressed("ui_up") : # move up
@@ -80,6 +83,9 @@ func _fixed_process(delta):
 			var player_new_height = self.get_viewport_rect().size.height - player.get_item_rect().size.height/2
 			player.set_pos(Vector2(player.get_pos().x, player_new_height )) 
 	
+	if Input.is_action_pressed("ui_select") :
+		if player.getShootdownCount() ==  0.0 :
+			player.shoot()
 	
 	# Move the deads
 	var deads = get_tree().get_nodes_in_group("deads")

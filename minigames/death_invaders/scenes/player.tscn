@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://minigames/death_invaders/scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://minigames/death_invaders/scripts/player_invader.gd" type="Script" id=1]
 [ext_resource path="res://minigames/death_invaders/assets/player.png" type="Texture" id=2]
 [ext_resource path="res://musics/freesound__fins__shoot.wav" type="Sample" id=3]
 

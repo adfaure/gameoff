@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://minigames/death_invaders/scripts/player_main.gd" type="Script" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/floor.png" type="Texture" id=3]
 [ext_resource path="res://sprites/wall.png" type="Texture" id=4]
@@ -8,18 +8,19 @@
 [ext_resource path="res://sprites/cocktail.png" type="Texture" id=6]
 [ext_resource path="res://sprites/cocktail2.png" type="Texture" id=7]
 [ext_resource path="res://sprites/arcade-puck2.png" type="Texture" id=8]
-[ext_resource path="res://sprites/arcade-invader.png" type="Texture" id=9]
+[ext_resource path="res://minigames/death_invaders/scenes/game_gui.tscn" type="PackedScene" id=9]
 [ext_resource path="res://sprites/guy.png" type="Texture" id=10]
 
 [node name="room" type="Node2D"]
 
 [node name="player" type="Node2D" parent="."]
 
-transform/pos = Vector2( 344.155, 450.229 )
+transform/pos = Vector2( 312.694, 472.436 )
 script/script = ExtResource( 1 )
 RUN_SPEED = 4
 WALK_SPEED = 1
 BASE_SPEED = 300
+player_range = 300
 
 [node name="player_scn" parent="player" instance=ExtResource( 2 )]
 
@@ -48,6 +49,8 @@ drag_margin/bottom = 0.0
 
 [node name="background" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="floor" type="Sprite" parent="background"]
 
 transform/pos = Vector2( 0, 480 )
@@ -67,6 +70,7 @@ region_rect = Rect2( 0, 0, 2000, 700 )
 
 [node name="bar" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 248.857 )
 transform/scale = Vector2( 0.75, 0.75 )
 z/z = 2
@@ -94,27 +98,48 @@ centered = false
 flip_h = true
 modulate = Color( 0.660156, 0.660156, 0.660156, 1 )
 
-[node name="arcade cabinets" type="Node2D" parent="."]
+[node name="arcade_cabinets" type="Node2D" parent="."]
 
 transform/pos = Vector2( 866.825, 0 )
 transform/scale = Vector2( 0.45, 0.45 )
 
-[node name="Puckman" type="Node2D" parent="arcade cabinets"]
+[node name="Puckman1" type="Node2D" parent="arcade_cabinets"]
 
-[node name="Puckman1" type="Sprite" parent="arcade cabinets/Puckman"]
+editor/display_folded = true
+transform/pos = Vector2( 1471.5, 707.634 )
 
-transform/pos = Vector2( 898.187, 0 )
+[node name="Puckman" type="Sprite" parent="arcade_cabinets/Puckman1"]
+
 texture = ExtResource( 8 )
-centered = false
 modulate = Color( 0.699219, 0.699219, 0.699219, 1 )
 
-[node name="DeathInvader" type="Node2D" parent="arcade cabinets"]
+[node name="DeathInvader1" type="Node2D" parent="arcade_cabinets"]
 
-[node name="DeathInvader1" type="Sprite" parent="arcade cabinets/DeathInvader"]
+transform/pos = Vector2( 595.789, 711.917 )
 
-texture = ExtResource( 9 )
-centered = false
-modulate = Color( 0.738281, 0.738281, 0.738281, 1 )
+[node name="Camera2D" type="Camera2D" parent="arcade_cabinets/DeathInvader1"]
+
+transform/pos = Vector2( -42.1975, -250.565 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 0.33, 0.33 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.0
+drag_margin/top = 0.0
+drag_margin/right = 0.0
+drag_margin/bottom = 0.0
+
+[node name="game_gui" parent="arcade_cabinets/DeathInvader1" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -353.674, -555.186 )
 
 [node name="shopOwner" type="Sprite" parent="."]
 

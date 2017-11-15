@@ -11,7 +11,8 @@ func _ready():
 	var score = get_node("Control/Viewport/game").get_score()
 	get_node("score").set_text(String(score))
 	set_fixed_process(true)
-	
+
+
 
 func _fixed_process(delta):
 	var score = get_node("Control/Viewport/game").get_score()
@@ -20,4 +21,6 @@ func _fixed_process(delta):
 	if get_node("Control/Viewport/game").is_over() :
 		get_node("game_over").show()
 		get_node("insert_coin").show()
-	
+	else :
+		get_node("game_over").hide()
+		get_node("insert_coin").hide()

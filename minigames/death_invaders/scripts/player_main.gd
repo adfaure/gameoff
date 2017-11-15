@@ -3,10 +3,10 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-export var RUN_SPEED = 30
-export var WALK_SPEED = 10
-export var BASE_SPEED = 10
-
+export var RUN_SPEED = 8
+export var WALK_SPEED = 2
+export var BASE_SPEED = 50
+export var player_range = 300
 
 var isFlipped = false
 
@@ -14,6 +14,9 @@ func _ready():
     set_process_input(true);
     set_fixed_process(true);
     pass
+
+func squared_distance (a, b):
+	return (a.get_global_pos() - b.get_global_pos()).length_squared()
 
 func _fixed_process(delta):
 	var boost = BASE_SPEED
@@ -23,7 +26,21 @@ func _fixed_process(delta):
 	if Input.is_action_pressed("ui_right"): input_dir += Vector2(1,0);
 	if Input.is_action_pressed("ui_left"): input_dir += Vector2(-1,0);
 	if Input.is_action_pressed("ui_run"): run = true
-	
+	if Input.is_action_pressed("ui_select"):
+		var cabinets = get_parent().find_node("arcade_cabinets").get_children()
+		if cabinets.size() != 0:
+			var nearest = {"node" : cabinets[0], "dist": squared_distance(cabinets[0],self)}
+			for cabinet in cabinets :
+				if not cabinet.find_node("Camera2D"): continue
+				var new_dist = squared_distance(cabinet,self)
+				if  new_dist < nearest["dist"] :
+					nearest["node"] = cabinet
+					nearest["dist"] = new_dist
+			var camera = nearest["node"].find_node("Camera2D")
+			if camera  && nearest["dist"] < player_range * player_range:#using squared distances
+				camera.make_current()
+				nearest["node"].find_node("game")._play()
+		
 	var animation
 	if (input_dir.x != 0) :
 		if run :

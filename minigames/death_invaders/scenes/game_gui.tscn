@@ -45,10 +45,7 @@ gui/disable_input = false
 
 [node name="game" parent="Control/Viewport" instance=ExtResource( 3 )]
 
-PLAYER_SPEED = 200
-DEADS_SPEED = 50
-BULLET_SPEED = 200
-SPAWN_RATE = 0.02
+over = true
 
 [node name="score" type="Label" parent="."]
 
