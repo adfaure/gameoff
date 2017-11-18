@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SHOOTDOWN = 50.0
+export var  SHOOTDOWN = 30.0
 var shootdown_count = 0.0
 
 func shoot():
